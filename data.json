@@ -1,0 +1,75 @@
+[
+  {
+    "id": "e46308a8-bcc0-485d-8ab1-7041d2f7993f",
+    "name": "New playground",
+    "slug": "",
+    "location": {
+      "address": "",
+      "city": "",
+      "city_slug": "",
+      "country": "",
+      "country_slug": "",
+      "code": "",
+      "district": "",
+      "latitude": 59.123123,
+      "longitude": 10.715993226181
+    },
+    "description": {
+      "pl": [
+        {
+          "title": "Opis placu",
+          "value": "To jest wspaniały plac zabaw, najlepszy w mieście"
+        }
+      ],
+      "en": []
+    },
+    "features": [
+      {
+        "key": "toilet",
+        "name": {
+          "pl": "Toaleta",
+          "en": "Toilet"
+        }
+      },
+      {
+        "key": "fresh-water",
+        "name": {
+          "pl": "",
+          "en": ""
+        }
+      },
+      {
+        "key": "bike-parking",
+        "name": {
+          "pl": "",
+          "en": ""
+        }
+      },
+      {
+        "key": "car-parking",
+        "name": {
+          "pl": "",
+          "en": ""
+        }
+      }
+    ],
+    "photos": [
+      {
+        "base_url": "",
+        "sizes": [
+          "1024x768",
+          "300x200"
+        ]
+      }
+    ],
+    "opening_hours": [
+      {
+        "day": "Monday",
+        "from_hour": 7,
+        "from_minutes": 0,
+        "to_hour": 19,
+        "to_minutes": 30
+      }
+    ]
+  }
+]

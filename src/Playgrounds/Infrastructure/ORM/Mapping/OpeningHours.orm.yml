@@ -1,0 +1,26 @@
+Playgrounds\Domain\OpeningHours:
+  type: entity
+  table: openingHours
+  id:
+    playground:
+      associationKey: true
+    day:
+      type: string
+      generator:
+        strategy: NONE
+  fields:
+    fromHour:
+      type: integer
+    fromMinutes:
+      type: integer
+    toHour:
+      type: integer
+    toMinutes:
+      type: integer
+  manyToOne:
+    playground:
+      targetEntity: Playgrounds\Domain\Playground
+      inversedBy: openingHours
+      joinColumn:
+        name: playgroundId
+        referencedColumnName: id

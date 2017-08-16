@@ -1,0 +1,75 @@
+Playgrounds\Domain\Playground:
+  type: entity
+  table: playground
+  gedmo:
+    loggable:
+      logEntryClass: Playgrounds\Domain\PlaygroundsLogs
+  id:
+    id:
+      type: string
+      generator:
+        strategy: NONE
+  fields:
+    name:
+      type: text
+      gedmo:
+        - versioned
+    slug:
+      type: string
+      length: 255
+      nullable: true
+      gedmo:
+        slug:
+          updatable: true
+          fields:
+            - name
+  embedded:
+    location:
+      class: Playgrounds\Domain\Location
+      gedmo:
+        - versioned
+    createdBy:
+      class: Playgrounds\Domain\LogInfo
+      columnPrefix: "createdBy_"
+    modifiedBy:
+      class: Playgrounds\Domain\LogInfo
+      columnPrefix: "modifiedBy_"
+      gedmo:
+        - versioned
+  oneToMany:
+    openingHours:
+      targetEntity: Playgrounds\Domain\OpeningHours
+      mappedBy: playground
+      cascade: ["persist", "merge"]
+  manyToMany:
+    photos:
+      orderBy: {'number': 'ASC'}
+      targetEntity: Playgrounds\Domain\Photo
+      cascade: ["merge"]
+      joinTable:
+        name: playgroundImage
+        joinColumns:
+          playgroundId:
+            referencedColumnName: id
+            onDelete: CASCADE
+        inverseJoinColumns:
+          photoId:
+            referencedColumnName: id
+            onDelete: CASCADE
+      gedmo:
+        - versioned
+    features:
+      targetEntity: Playgrounds\Domain\Feature
+      cascade: ["merge"]
+      joinTable:
+        name: playgroundFeature
+        joinColumns:
+          playgroundId:
+            referencedColumnName: id
+            onDelete: CASCADE
+        inverseJoinColumns:
+          featureKey:
+            referencedColumnName: key
+            onDelete: CASCADE
+      gedmo:
+        - versioned

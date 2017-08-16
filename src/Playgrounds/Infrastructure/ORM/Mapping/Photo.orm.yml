@@ -1,0 +1,15 @@
+Playgrounds\Domain\Photo:
+  type: entity
+  table: photo
+  id:
+    id:
+      type: string
+      generator:
+        strategy: NONE
+  fields:
+    url:
+      type: string
+    sizes:
+      type: json_array
+    number:
+      type: integer

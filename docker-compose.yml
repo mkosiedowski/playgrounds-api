@@ -1,0 +1,48 @@
+version: '2'
+services:
+  php:
+    build: .
+    networks:
+      - back
+      - front
+      - app
+    volumes:
+      - .:/var/www/playgrounds
+      - ./app/cache/sf2/logs:/tmp/sf2/logs:rw
+    ports:
+      - "8000:8000"
+  nginx:
+    image: nginx:1.11-alpine
+    volumes_from:
+      - php
+    volumes:
+      - ./docker/vhost.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "80:80"
+    networks:
+      - front
+      - app
+  mysql:
+    image: mysql:5.7.9
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+    volumes:
+      - /mnt/sda1/var/lib/mysql-data/styletime:/var/lib/mysql
+      - .:/var/www/styletime
+    ports:
+      - "3306:3306"
+    networks:
+      - back
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:4.7
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: mysql
+    networks:
+      - front
+      - back
+networks:
+  front: ~
+  back: ~
+  app: ~

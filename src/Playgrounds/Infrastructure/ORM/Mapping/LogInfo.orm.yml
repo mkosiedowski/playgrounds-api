@@ -1,0 +1,10 @@
+Playgrounds\Domain\LogInfo:
+  type: embeddable
+  fields:
+    ipAddress:
+      type: string
+      length: 45
+    username:
+      type: string
+    time:
+      type: datetime

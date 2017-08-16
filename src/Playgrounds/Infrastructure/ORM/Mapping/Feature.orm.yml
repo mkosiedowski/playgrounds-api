@@ -1,0 +1,16 @@
+Playgrounds\Domain\Feature:
+  type: entity
+  table: feature
+  gedmo:
+    loggable:
+      logEntryClass: Playgrounds\Domain\PlaygroundsLogs
+  id:
+    key:
+      type: string
+      generator:
+        strategy: NONE
+  fields:
+    name:
+      type: json_array
+      gedmo:
+        - versioned

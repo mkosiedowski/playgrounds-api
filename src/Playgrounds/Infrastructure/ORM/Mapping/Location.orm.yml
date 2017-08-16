@@ -1,0 +1,17 @@
+Playgrounds\Domain\Location:
+  type: embeddable
+  fields:
+    address:
+      type: string
+    country:
+      type: string
+    city:
+      type: string
+    code:
+      type: string
+    district:
+      type: string
+    latitude:
+      type: float
+    longitude:
+      type: float
