@@ -6,7 +6,7 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: en
+    locale: pl
 
 framework:
     #esi: ~
@@ -24,9 +24,8 @@ framework:
     default_locale: '%locale%'
     trusted_hosts: ~
     session:
-        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-        handler_id: session.handler.native_file
-        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        # handler_id set to null will use default session handler from php.ini
+        handler_id:  ~
     fragments: ~
     http_method_override: true
     assets: ~
@@ -86,3 +85,21 @@ doctrine:
                         dir: "%kernel.root_dir%/../src/Playgrounds/Infrastructure/ORM/Mapping/"
                         prefix: Playgrounds\Domain
                         is_bundle: false
+
+nelmio_cors:
+    paths:
+      '^/':
+          allow_credentials: true
+          allow_origin: ['*']
+          allow_headers: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
+          allow_methods: ['POST','GET','DELETE','PUT','PATCH']
+          expose_headers: ['X-Page-Count', 'X-Count']
+
+stof_doctrine_extensions:
+    default_locale: "%locale%"
+    translation_fallback: true
+    orm:
+        default:
+            sluggable: true
+            loggable: true
+            timestampable: true

@@ -18,7 +18,7 @@ class Playground
     /** @var Location */
     public $location;
 
-    /** @var Collection */
+    /** @var array */
     public $description;
 
     /** @var Collection */
@@ -43,7 +43,7 @@ class Playground
      * @param string $name
      * @param string $slug
      * @param Location $location
-     * @param Collection $description
+     * @param array $description
      * @param Collection $features
      * @param Collection $photos
      * @param Collection $openingHours
@@ -52,9 +52,9 @@ class Playground
     public function __construct(
         PlaygroundId $id,
         string $name,
-        string $slug,
+        ?string $slug,
         Location $location,
-        Collection $description,
+        array $description,
         Collection $features,
         Collection $photos,
         Collection $openingHours,

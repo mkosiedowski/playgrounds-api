@@ -5,7 +5,7 @@ Playgrounds\Domain\Feature:
     loggable:
       logEntryClass: Playgrounds\Domain\PlaygroundsLogs
   id:
-    key:
+    id:
       type: string
       generator:
         strategy: NONE

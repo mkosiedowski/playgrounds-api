@@ -28,9 +28,14 @@ services:
         # but if a service is unused, it's removed anyway
         exclude: '../../src/Playgrounds/Domain/UseCase/*/{Command,Responder}'
 
+
     Playgrounds\Infrastructure\ORM\ORMPlaygroundRepository: ~
     Playgrounds\Domain\Repository\PlaygroundRepository: '@Playgrounds\Infrastructure\ORM\ORMPlaygroundRepository'
     Playgrounds\Domain\UseCase\GetPlaygrounds:
+        public: true
+    Playgrounds\Infrastructure\ORM\ORMFeatureRepository: ~
+    Playgrounds\Domain\Repository\FeatureRepository: '@Playgrounds\Infrastructure\ORM\ORMFeatureRepository'
+    Playgrounds\Domain\UseCase\AddPlayground:
         public: true
 
     # controllers are imported separately to make sure they're public

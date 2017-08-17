@@ -49,6 +49,10 @@ class ORMPlaygroundRepository extends AbstractORMRepository implements Playgroun
      */
     public function findByParameters(array $parameters, array $order, int $page, int $limit): array
     {
-        return $this->manager->getRepository(Playground::class)->findAll();
+        $builder = $this->manager->getRepository(Playground::class)->createQueryBuilder('p');
+        $builder->setMaxResults($limit);
+        $builder->setFirstResult($page * $limit);
+
+        return $builder->getQuery()->getResult();
     }
 }

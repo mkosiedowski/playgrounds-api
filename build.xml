@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="StyletimeAPI" default="run">
+
+    <target name="clean" description="Clean up and create logs directory">
+        <delete dir="build/logs"/>
+        <mkdir dir="build/logs"/>
+    </target>
+
+    <target name="phpcs" description="Generate checkstyle.xml using PHP_CodeSniffer">
+        <exec executable="bin/phpcs" passthru="true" checkreturn="true">
+            <arg line="--standard=./phpcs.ruleset.xml --extensions=php src"/>
+        </exec>
+    </target>
+
+    <target name="quality" depends="phpcs"/>
+
+</project>

@@ -1,13 +1,15 @@
 version: '2'
 services:
   php:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile.RPi
     networks:
       - back
       - front
-      - app
     volumes:
       - .:/var/www/playgrounds
+      - ./app/cache/sf2/logs:/tmp/sf2/logs:rw
     ports:
       - "8000:8000"
   nginx:
@@ -20,9 +22,8 @@ services:
       - "80:80"
     networks:
       - front
-      - app
   mysql:
-    image: mysql:5.7.9
+    image: hypriot/rpi-mysql:latest
     environment:
       MYSQL_ROOT_PASSWORD: password
     volumes:
@@ -32,16 +33,6 @@ services:
       - "3306:3306"
     networks:
       - back
-  phpmyadmin:
-    image: phpmyadmin/phpmyadmin:4.7
-    ports:
-      - "8080:80"
-    environment:
-      PMA_HOST: mysql
-    networks:
-      - front
-      - back
 networks:
   front: ~
   back: ~
-  app: ~

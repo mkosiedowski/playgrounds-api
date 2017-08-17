@@ -157,9 +157,9 @@ abstract class RestController extends FOSRestController
     }
 
     /**
-     * @return UserInformation
+     * @return LogInfo
      */
-    protected function getUserInformation(): UserInformation
+    protected function getUserInformation(): LogInfo
     {
         /** @var User $user */
         $user = $this->getUser();

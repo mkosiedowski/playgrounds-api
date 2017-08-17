@@ -69,7 +69,7 @@ Playgrounds\Domain\Playground:
             onDelete: CASCADE
         inverseJoinColumns:
           featureKey:
-            referencedColumnName: key
+            referencedColumnName: id
             onDelete: CASCADE
       gedmo:
         - versioned

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="Playgrounds-API">
+    <description>Playgrounds-API coding standards.</description>
+
+    <!-- There should not be any code in the bundle Resources directory. -->
+    <exclude-pattern>*/Resources/*</exclude-pattern>
+    <exclude-pattern>*/spec/*</exclude-pattern>
+
+    <rule ref="PSR1"/>
+    <rule ref="PSR2"/>
+    <rule ref="vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/Sniffs/Classes/"/>
+    <rule ref="vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/Sniffs/Formatting/"/>
+    <rule ref="vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/Sniffs/Scope/"/>
+    <rule ref="vendor/leaphub/phpcs-symfony2-standard/leaphub/phpcs/Symfony2/Sniffs/WhiteSpace/"/>
+</ruleset>

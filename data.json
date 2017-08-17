@@ -4,13 +4,11 @@
     "name": "New playground",
     "slug": "",
     "location": {
-      "address": "",
-      "city": "",
-      "city_slug": "",
-      "country": "",
-      "country_slug": "",
-      "code": "",
-      "district": "",
+      "address": "Warneńska",
+      "city": "Gdańsk",
+      "country": "Poland",
+      "code": "80-283",
+      "district": "Piecki-Migowo",
       "latitude": 59.123123,
       "longitude": 10.715993226181
     },
@@ -24,43 +22,7 @@
       "en": []
     },
     "features": [
-      {
-        "key": "toilet",
-        "name": {
-          "pl": "Toaleta",
-          "en": "Toilet"
-        }
-      },
-      {
-        "key": "fresh-water",
-        "name": {
-          "pl": "",
-          "en": ""
-        }
-      },
-      {
-        "key": "bike-parking",
-        "name": {
-          "pl": "",
-          "en": ""
-        }
-      },
-      {
-        "key": "car-parking",
-        "name": {
-          "pl": "",
-          "en": ""
-        }
-      }
-    ],
-    "photos": [
-      {
-        "base_url": "",
-        "sizes": [
-          "1024x768",
-          "300x200"
-        ]
-      }
+        "car-parking"
     ],
     "opening_hours": [
       {
